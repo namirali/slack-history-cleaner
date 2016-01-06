@@ -1,0 +1,17 @@
+{
+  "name": "slack-cleanup",
+  "version": "1.0.0",
+  "description": "delete all messages from slack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "slack"
+  ],
+  "author": "n.amirali@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.67.0"
+  }
+}
