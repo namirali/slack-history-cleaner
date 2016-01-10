@@ -9,6 +9,10 @@
   "keywords": [
     "slack", "slack history", "slack delete"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/namirali/slack-history-cleaner"
+  },
   "author": "n.amirali@gmail.com",
   "license": "ISC",
   "dependencies": {
