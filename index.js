@@ -51,9 +51,9 @@ async.auto({
         if (err || data.error || resp.statusCode != 200) return next(err || new Error(data.error || "IM history error, statusCode", resp.statusCode));
 
         let messages = data.messages.filter(message => { return message.type == "message" && message.user == me; }).map(message => message.ts);
-        let lastTs = messages[messages.length - 1];
+        let lastTs = data.messages[data.messages.length - 1].ts;
 
-        if (!data.messages.length)
+        if (data.has_more)
           return listMessages({ channel : options.channel, messages : [...messages, ...options.messages], lastTs : lastTs }, next);
 
         return next(null, { messages : [...messages, ...options.messages], channel : options.channel });
@@ -80,7 +80,7 @@ async.auto({
     }
 
     async.each(data.listMessages, (c, next) => {
-      async.eachLimit(c.messages, 5, (ts, next)=> {
+      async.eachLimit(c.messages, 4, (ts, next)=> {
         deleteMessage({ ts, channel : c.channel }, next);
       }, next)
     }, next)
