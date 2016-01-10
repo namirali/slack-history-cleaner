@@ -11,6 +11,9 @@
     "slack history",
     "slack delete"
   ],
+  "bin": {
+    "slack-history-cleaner": "index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/namirali/slack-history-cleaner"
