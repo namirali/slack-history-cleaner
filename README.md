@@ -1,7 +1,7 @@
 # slack-history-cleaner
 
 ### install
-`npm install slack-history-cleaner`
+`npm install -g slack-history-cleaner`
 
 
 ### usage
